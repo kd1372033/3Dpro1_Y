@@ -1,5 +1,8 @@
 ﻿#pragma once
 
+//クラスの前方宣言
+class Player;
+
 class GameScene
 {
 public:	//どこからでもアクセス可能
@@ -13,5 +16,6 @@ public:	//どこからでもアクセス可能
 
 private: //このクラス内からのみアクセス可能
 	void Release();		//解放処理
-
+	
+	Player* m_player = nullptr;
 };
