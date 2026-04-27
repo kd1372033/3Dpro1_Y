@@ -5,14 +5,15 @@ class BaseObject
 {
 public:
 	BaseObject() {}
-	~BaseObject() { Release(); }
+	virtual ~BaseObject() { Release(); }
+	//基底クラスのデストラクタは絶対に仮想関数にする！！！
 
-	void Update();
-	void Draw();
-	void Init();
+	virtual void Update();
+	virtual void Draw();
+	virtual void Init();
 
 protected: // このクラスと派生先のクラス内からアクセス可能
-	void Release();
+	virtual void Release();
 
 	KdTexture		m_tex;				//テクスチャ
 	Math::Vector3	m_pos;				//座標

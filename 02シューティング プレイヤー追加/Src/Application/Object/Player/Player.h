@@ -8,14 +8,17 @@ class Player :public BaseObject
 {
 public:
 	Player() {}
-	~Player() { Release(); }
+	~Player() override { Release(); }
 
-	void Update();
-	void Draw();
-	void Init();
+	// 基底クラスの仮想関数をオーバーライド
+// override指定子は無くてもオーバーライドはされるが
+// overrideしているかどうかを判別する目的でつけるべき (可読性の問題もある)
+	void Update() override;
+	void Draw()	  override;
+	void Init()   override;
 
 private:
 
-	void Release();
+	void Release() override;
 
 };

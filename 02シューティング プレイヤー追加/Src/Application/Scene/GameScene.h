@@ -1,7 +1,8 @@
 ﻿#pragma once
 
 //クラスの前方宣言
-class Player;
+//class Player;
+class BaseObject;
 
 class GameScene
 {
@@ -17,5 +18,7 @@ public:	//どこからでもアクセス可能
 private: //このクラス内からのみアクセス可能
 	void Release();		//解放処理
 	
-	Player* m_player = nullptr;
+	//Player* m_player = nullptr;		// 派生クラスのポインタ
+	BaseObject* m_player = nullptr;		// 基底クラスのポインタ
+
 };

@@ -19,7 +19,7 @@ void GameScene::Draw()
 void GameScene::Init()
 {
 	// プレイヤー
-	m_player = new Player();	// ①インスタンス確保
+	m_player = new Player();	// ①インスタンス確保 基底クラス→派生クラスの順で呼び出される
 	m_player->Init();			// ②初期化
 }
 
