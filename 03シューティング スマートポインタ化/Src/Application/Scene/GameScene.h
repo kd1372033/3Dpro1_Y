@@ -17,8 +17,9 @@ public:	//どこからでもアクセス可能
 
 private: //このクラス内からのみアクセス可能
 	void Release();		//解放処理
-	
+
 	//Player* m_player = nullptr;		// 派生クラスのポインタ
-	BaseObject* m_player = nullptr;		// 基底クラスのポインタ
+	//BaseObject* m_player = nullptr;		// 基底クラスのポインタ
+	std::shared_ptr<BaseObject> m_player = nullptr;
 
 };

@@ -18,17 +18,21 @@ void GameScene::Draw()
 
 void GameScene::Init()
 {
-	// プレイヤー
-	m_player = new Player();	// ①インスタンス確保 基底クラス→派生クラスの順で呼び出される
-	m_player->Init();			// ②初期化
+	// プレイヤー 生ポインタ
+	//m_player = new Player();	// ①インスタンス確保 基底クラス→派生クラスの順で呼び出される
+	//m_player->Init();			// ②初期化
+
+	//プレイヤー　スマートポインタ
+	m_player = std::make_shared<Player>();
+	m_player->Init();
 }
 
 void GameScene::Release()
 {
 	//nullチェック
-	if(m_player)
+	/*if(m_player)
 	{
 		delete m_player;
 		m_player = nullptr;
-	}
+	}*/
 }
