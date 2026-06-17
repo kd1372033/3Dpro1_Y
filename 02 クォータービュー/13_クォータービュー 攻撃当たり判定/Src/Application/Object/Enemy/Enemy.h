@@ -8,13 +8,15 @@ public:
 	Enemy() {}
 	~Enemy() override {}
 
-	void Update()                     override;
-	void PostUpdate()                 override;
+	void Update()					 override;
+	void PostUpdate()				 override;
 
 	void GenerateDepthMapFromLight() override;
-	void DrawLit()                     override;
+	void DrawLit()					 override;
 
-	void Init()                         override;
+	void Init()						 override;
+
+	void OnHit()       override;
 
 	void SetPos(Math::Vector3 _pos) { m_pos = _pos; }
 	void SetTarget(std::weak_ptr<Player> _target);
@@ -43,6 +45,6 @@ private:
 	//ターゲットポインタ
 	std::weak_ptr<KdGameObject> m_target;
 
-	std::weak_ptr<Player>m_wpTarget;
+	std::weak_ptr<Player> m_wpTarget;
 
 };
