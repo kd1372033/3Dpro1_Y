@@ -1,5 +1,6 @@
 ﻿#pragma once
-class CameraBase;
+
+//class CameraBase;
 class WeaponBase;
 
 class Player : public KdGameObject

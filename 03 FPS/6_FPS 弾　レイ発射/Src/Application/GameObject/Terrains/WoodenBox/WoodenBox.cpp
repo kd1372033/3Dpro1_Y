@@ -15,7 +15,7 @@ void WoodenBox::Init()
 		m_spModel->SetModelData("Asset/Models/Terrains/WoodenBox/Wooden_Box.gltf");
 
 		m_pCollider = std::make_unique<KdCollider>();
-		m_pCollider->RegisterCollisionShape("WoodenBox", m_spModel, KdCollider::TypeGround);
+		m_pCollider->RegisterCollisionShape("WoodenBox", m_spModel, KdCollider::TypeGround | KdCollider::TypeDamage);
 
 		m_mWorld = Math::Matrix::CreateScale(10.0f);
 	}

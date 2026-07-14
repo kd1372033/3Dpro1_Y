@@ -1,6 +1,7 @@
 ﻿#include "Player.h"
 #include"../../../Scene/SceneManager.h"
 #include"../../Camera/CameraBase.h"
+#include "../../Weapon/WeaponBase.h"
 
 void Player::Update()
 {
@@ -42,7 +43,11 @@ void Player::Update()
 			m_leftClickFlg = true;
 
 			//弾発射の処理が必要
-			
+			std::shared_ptr<WeaponBase> spWeapon= m_wpWeapon.lock();
+			if (spWeapon)
+			{
+				spWeapon->ShotBullet(true);
+			}
 		}
 	}
 	else
